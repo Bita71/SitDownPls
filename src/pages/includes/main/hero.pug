@@ -1,0 +1,10 @@
+section.section-margin.hero  
+  h1.visually-hidden SitDownPls - интернет-магазин мебели
+  .swiper-hero 
+    ul.reset-list.swiper-wrapper
+      each el in [{title:'Скидка 15% на первую покупку', btnText:'Получить!', extraClass:'hero-1'}, {title:'1000+ аксессуаров для дома', btnText:'Подробнее',extraClass:'hero-2'}, {title:'Коллекция стильного и яркого текстиля', btnText:'Подробнее',extraClass:'hero-3'},] 
+        li.swiper-slide(class=el.extraClass)
+          .container.hero-container
+            h2.reset-title.hero-title= el.title 
+            button.reset-btn.btn-primary.hero-btn(type="button")= el.btnText
+    .swiper-pagination-hero

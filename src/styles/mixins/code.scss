@@ -1,0 +1,42 @@
+@mixin textFocus($color) {
+  &:focus {
+    background-color: $color;
+  }
+
+  &:active {
+    background-color: transparent;
+  }
+}
+
+@mixin transition($properties...) {
+  transition-property: $properties;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}
+
+@mixin selectArrow {
+  position: absolute;
+  border: none;
+  border-left: 1px solid $primary;
+  border-bottom: 1px solid $primary;
+  height: 8px;
+  width: 8px;
+  margin: 0;
+  transform: rotate(-45deg);
+  @include transition(border);
+}
+
+@mixin card {
+  border-radius: 10px;
+  height: 100%;
+  background-color: $greyLight;
+}
+
+@mixin swiperBtns($name) {
+  &-button-prev-#{$name} {
+    margin-right: 13px;
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+}

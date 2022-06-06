@@ -1,0 +1,31 @@
+doctype html
+html(lang="ru")
+  head 
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Контакты
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@900&display=swap" rel="stylesheet")
+    link(rel="stylesheet" href="local_modules/choices/choices.min.css")
+    link(rel="stylesheet" href="css/contacts.min.css")    
+    script(defer src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" )
+    script(defer src="local_modules/choices/choices.min.js")
+    script(type="module" src="js/contacts.min.js")
+  body
+    block header
+      include common/header
+    main.contacts
+      .container
+        h1.reset-title.contacts-title Контакты
+        form.contacts-search(action="#")
+          input.form-input.contacts-input#suggest(type="text" placeholder="Поиск магазина" name="shopName")
+          button.reset-btn.btn-primary.contacts-btn(type="button") Поиск
+        .contacts-map#map
+    block footer
+      include common/footer
+
+
+    
+  

@@ -1,0 +1,11 @@
+@mixin media($name) {
+  @each $size, $resolution in $sizes {
+    @if $name == $size {
+      @media (max-width: $resolution) {
+        @content;
+      }
+    }
+  }
+}
+
+

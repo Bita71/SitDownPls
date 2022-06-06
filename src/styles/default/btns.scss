@@ -1,0 +1,154 @@
+.btn,
+.btn-primary,
+.btn-secondary {
+  border-radius: 10px;
+  font-size: 16px;
+  border: 2px solid $primary;
+  @include transition(border, background, color);
+
+  &:focus {
+    background-color: $primaryLight;
+  }
+}
+
+.btn-primary {
+  max-width: 296px;
+  padding: 19px 48px;
+  font-weight: 700;
+  color: #fff;
+  background-color: $primary;
+
+  &:hover {
+    border-color: $primaryLight;
+    background-color: $primaryLight;
+  }
+
+  &:focus,
+  &:active {
+    border-color: $primaryShade;
+  }
+
+  &:active {
+    background-color: $primaryShade;
+  }
+
+  &:disabled {
+    border-color: $mdGrey;
+    color: $grey;
+    background-color: $mdGrey;
+  }
+}
+
+.btn-secondary {
+  padding: 16px 33px;
+  font-weight: 600;
+  color: $primary;
+
+  &:focus,
+  &:hover,
+  &:active {
+    color: #fff;
+  }
+
+  &:hover {
+    background-color: $primary;
+  }
+
+  &:active {
+    border-color: $primaryShade;
+    background-color: $primaryShade;
+  }
+}
+
+.btn-arrow,
+.btn-to-catalog {
+  width: 32px;
+  height: 32px;
+
+  & svg {
+    border-radius: 50%;
+    @include transition(background);
+    & path {
+      @include transition(stroke);
+    }
+
+    & circle {
+      @include transition(stroke);
+    }
+  }
+
+  &:hover svg {
+    background-color: $primary;
+  }
+
+  &:focus svg {
+    background-color: $primaryLight;
+  }
+
+  &:active svg {
+    background-color: $primaryShade;
+    & circle {
+      stroke: $primaryShade;
+    }
+  }
+
+  &:hover svg path,
+  &:focus svg path,
+  &:active svg path {
+    stroke: $white;
+  }
+
+  &.swiper-button-disabled {
+    cursor: auto;
+
+    & svg {
+      background-color: #fff;
+      & path {
+        stroke: $grey;
+      }
+
+      & circle {
+        stroke: $grey;
+      }
+    }
+  }
+}
+
+.btn-to-catalog {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  height: auto;
+  margin-top: auto;
+  margin-bottom: 0;
+  font-weight: 700;
+  font-size: 16px;
+  color: $primary;
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  @include transition(color, text-decoration);
+
+  @include media("md") {
+    & span {
+      display: none;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-style: solid;
+    text-decoration-color: $primary;
+  }
+
+  &:active {
+    color: $primaryShade;
+    text-decoration-color: $primaryShade;
+  }
+
+  svg {
+    margin-left: 5px;
+  }
+}

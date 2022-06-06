@@ -1,0 +1,36 @@
+doctype html
+html(lang="ru")
+  head 
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Сотрудничество
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@900&display=swap" rel="stylesheet")
+    link(rel="stylesheet" href="local_modules/choices/choices.min.css")
+    link(rel="stylesheet" href="css/cooperation.min.css")    
+    script(defer src="local_modules/choices/choices.min.js")
+    script(type="module" src="js/cooperation.min.js")
+  body
+    block header
+      include common/header
+    main.cooperation
+      .container.cooperation-container
+        h1.reset-title.cooperation-title Сотрудничество
+        block suppliers
+          include includes/cooperation/suppliers
+        block services
+          include includes/cooperation/services
+        block advantages
+          include includes/cooperation/advantages
+        block guarantees
+          include includes/cooperation/guarantees
+        block guaranteesPeriod
+          include includes/cooperation/guaranteesPeriod
+    block footer
+      include common/footer
+
+
+    
+  

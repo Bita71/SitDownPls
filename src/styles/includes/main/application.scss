@@ -1,0 +1,82 @@
+.application {
+  @include media('md') {
+    margin-bottom: 69px;
+  }
+  &-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 32px;
+
+    @include media('xl') {
+      grid-template-columns: repeat(9, 1fr);
+    }
+
+    @include media('lg') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include media('md') {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &-title {
+    margin-bottom: 9px;
+
+    @include media('md') {
+      margin-bottom: 8px;
+    }
+  }
+
+  &-text {
+    margin-bottom: 16px;
+    font-size: 14px;
+    line-height: 19px;
+    color: $greyShade;
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+
+    @include media('xl') {
+      grid-column: span 4;
+    }
+    @include media('lg') {
+      grid-column: span 2;
+    }
+  }
+
+  &-list {
+    margin-bottom: 30px;
+  }
+
+  &-item {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+
+  &-btn {
+    margin-bottom: 14px;
+    @include media('md') {
+      margin-bottom: 13px;
+    }
+  }
+
+
+
+  &-img {
+    @include media('xl') {
+      grid-column: span 5;
+    }
+    @include media('lg') {
+      grid-column: span 1;
+    }
+    @include media('md') {
+      display: none;
+    }
+  }
+}

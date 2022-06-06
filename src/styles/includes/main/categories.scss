@@ -1,0 +1,209 @@
+.categories {
+  @include media('md') {
+    margin-bottom: 78px;
+  }
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 511px;
+    grid-auto-rows: 405px;
+    gap: 32px;
+
+    @include media("xl") {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 511px);
+    }
+
+    @include media("lg") {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 511px);
+    }
+    @include media("md") {
+      grid-template-rows: 332px;
+      grid-auto-rows: 206px;
+    gap: 32px 16px;
+
+    }
+  }
+
+  &-bottom {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    @include media("md") {
+      flex-direction: row;
+      height: auto;
+    }
+  }
+
+  &-item {
+    @include card;
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background-repeat: no-repeat;
+    background-position: left 121px;
+
+    @include media("xl") {
+      grid-column: span 1;
+    }
+
+    @include media("md") {
+      display: block;
+      padding: 16px;
+      &.category-1 {
+        padding: 30px;
+      }
+    }
+  }
+
+  &-title {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 33px;
+    @include media("md") {
+      font-size: 16px;
+      line-height: 22px;
+
+      .category-1 & {
+        font-size: 24px;
+        line-height: 33px;
+      }
+      .category-4 & {
+        max-width: 65px;
+        line-height: 17px;
+      }
+    }
+
+    &-link {
+      @include textFocus($pinkViolet);
+      @include transition(background-color);
+
+      color: $black;
+    }
+  }
+}
+
+$imgName: 1, 2,3,4,5;
+
+@each $var in $imgName {
+  .category-#{$var} {
+    background-image: url('../img/main/categories/#{$var}.png');
+
+    @include media('xl') {
+    background-image: url('../img/main/categories/1024/#{$var}.png');
+
+    }
+    @include media('lg') {
+      background-image: url('../img/main/categories/768/#{$var}.png');
+  
+      }
+      @include media('md') {
+        background-image: url('../img/main/categories/320/#{$var}.png');
+    
+        }
+  }
+}
+
+
+.category-1 {
+  grid-column: span 3;
+
+
+  @include media("xl") {
+    grid-column: span 2;
+    order: 0;
+
+  }
+}
+
+.category-2 {
+  grid-column: span 3;
+
+  @include media("xl") {
+    grid-column: span 1;
+    order: 3;
+  }
+  @include media("lg") {
+    order: 2;
+  }
+}
+
+.category-3 {
+
+  order: 1;
+}
+.category-4 {
+
+  order: 2;
+  @include media("lg") {
+    order: 3;
+  }
+}
+.category-5 {
+
+  order: 4;
+}
+
+.subcategories {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 13px;
+
+  @include media("md") {
+    @include media("md") {
+      margin-bottom: 8px;
+      .category-1 & {
+        margin-bottom: 13px;
+      }
+    }
+  }
+
+  @include media("sm") {
+    flex-direction: column;
+    .category-1 & {
+      flex-direction: row;
+    }
+  }
+
+  &-item {
+    &:not(:last-child) {
+      margin-right: 30px;
+
+      @include media("md") {
+        margin-bottom: 4px;
+        .category-1 & {
+          margin-right: 20px;
+          margin-bottom: 0;
+        }
+      }
+
+      @include media("sm") {
+        margin-right: 0;
+        .category-1 & {
+          margin-right: 20px;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &-link {
+    @include textFocus($pinkViolet);
+    @include transition(background-color);
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 1;
+    color: $grey;
+
+    @include media("md") {
+      font-size: 10px;
+      .category-1 & {
+        font-size: 14px;
+      }
+    }
+  }
+}

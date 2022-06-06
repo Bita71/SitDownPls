@@ -1,0 +1,58 @@
+.guarantees {
+  grid-column: span 4;
+  @include media('xl') {
+    grid-column: span 8;
+  
+  }
+  @include media('lg') {
+    grid-column: span 1;
+  }
+
+  &-list {
+    margin: 0;
+    padding-left: 17px;
+  }
+
+  &-item {
+
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+
+    &::marker {
+      font-size: 16px;
+      line-height: 29px;
+      color: $secondary; 
+    }
+  }
+
+  &-text {
+    margin-left: 9px;
+  }
+
+  &-period {
+    
+    grid-column: span 3;
+    padding: 22px 0 22px 109px;
+    font-size: 24px;
+    line-height: 36px;
+    background-image: url("../img/cooperation/pencil.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    @include media('xl') {
+      grid-column: span 6;
+    
+    }
+    @include media('lg') {
+      grid-column: span 1;
+    }
+
+    @include media('sm') {
+      padding: 0 0 0 52px;
+      font-size: 16px;
+      line-height: 24px;
+      background-size: 36px;
+    } 
+  }
+}

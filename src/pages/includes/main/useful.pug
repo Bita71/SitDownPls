@@ -1,0 +1,32 @@
+section.section-margin.useful 
+  .container.useful-container
+    h2.reset-title.subtitle.useful-title Полезное
+    - var usefulImgPath = 'img/main/useful/';
+    - var usefulPath1024 = usefulImgPath + '1024/';
+    - var usefulPath768 = usefulImgPath + '768/';
+    - var usefulPath320 =usefulImgPath + '320/';
+    - var usefulImgFormat = '.jpg';
+    .swiper-useful
+      ul.reset-list.swiper-wrapper 
+        each el in [{img:'1', text:'И нет сомнений, что сделанные на базе интернет-аналитики выводы представляют собой не что иное?'},{img:'2', text:'Как принято считать, некоторые особенности приносят несомненную пользу обществу?'},{img:'3', text:'Ясность нашей позиции очевидна: укрепление и развитие внутренней структуры?'},{img:'4', text:'Прежде всего, консультация с широким активом однозначно фиксирует необходимость распределения?'},{img:'5', text:'Как принято считать, некоторые особенности приносят несомненную пользу обществу?'},]
+          li.swiper-slide
+            article
+              .useful-img
+                picture
+                  source(srcset=usefulPath320 + el.img + usefulImgFormat media="(max-width: 500px)")
+                  source(srcset=usefulPath768 + el.img + usefulImgFormat media="(max-width: 900px)")
+                  source(srcset=usefulPath1024 + el.img + usefulImgFormat media="(max-width: 1200px)")
+                  source(srcset=usefulImgPath + el.img + usefulImgFormat)
+                  img(src=usefulImgPath + el.img + usefulImgFormat, alt=el.img)
+              .useful-content 
+                h3.reset-title.useful-text= el.text 
+                a.reset-link.btn-secondary.useful-link(href="#") Читать
+    .useful-swiper-btns
+      button.reset-btn.btn-arrow.swiper-button-prev-useful(type="button")
+        svg(width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg")
+          path(d="M14 11L19 16L14 21" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+          circle(cx="16" cy="16" r="15" stroke="#A65CF0" stroke-width="2")
+      button.reset-btn.btn-arrow.swiper-button-next-useful(type="button")
+        svg(width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg")
+          path(d="M14 11L19 16L14 21" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+          circle(cx="16" cy="16" r="15" stroke="#A65CF0" stroke-width="2")

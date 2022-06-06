@@ -1,0 +1,97 @@
+.card {
+  @include card;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+
+  &-top {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+  }
+
+  &-img {
+    display: flex;
+    justify-content: center;
+    margin: 0 14px 11px;
+  }
+
+  &-content {
+    padding: 0 30px 30px;
+  }
+
+  &-title {
+    margin-bottom: 22px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+    
+    &-link {
+      color: $black;
+    }
+  }
+
+  &-price {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 24px;
+    font-size: 16px;
+    color: $grey;
+  }
+
+  .card-full &{
+    &-top {
+      top: 32px;
+      padding-left: 22px;
+      font-size: 16px;
+      color: $secondary;
+      background-image: url(../img/main/rating/star.svg);
+      background-repeat: no-repeat;
+      background-position: left 1px;
+  
+      @include media("md") {
+        top: 17px;
+        left: 16px;
+        padding-left: 19px;
+        font-size: 12px;
+        line-height: 16px;
+        background-size: 13px 12px;
+      }
+    }
+  
+    &-title {
+      margin-bottom: 24px;
+  
+      @include media("md") {
+        margin-bottom: 18px;
+        font-size: 16px;
+        line-height: 21px;
+      }
+      &-link {
+        @include textFocus($pinkViolet);
+        @include transition(background-color);
+      }
+    }
+  
+    &-price {
+      @include media("md") {
+        margin-bottom: 17px;
+      }
+    }
+  
+    &-content {
+      @include media("md") {
+        padding: 0 16px 16px;
+      }
+  
+      &-btn {
+        @include media("md") {
+          padding: 9px 23px;
+        }
+      }
+    }
+  }
+  
+}

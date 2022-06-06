@@ -1,0 +1,42 @@
+.rating {
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 420px;
+    gap: 32px;
+
+    @include media("xl") {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include media("lg") {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include media("md") {
+      grid-auto-rows: 278px;
+      gap: 16px;
+    }
+  }
+
+  &-item:not(:nth-child(-n + 8)) {
+    display: none;
+  }
+
+  @include media("xl") {
+    &-item:not(:nth-child(-n + 6)) {
+      display: none;
+    }
+  }
+
+  &-item.is-open {
+    display: flex;
+  }
+
+  &-btn-more {
+    display: block;
+    margin: 32px auto 0;
+    padding-right: 34px;
+    padding-bottom: 19px;
+    padding-left: 35px;
+  }
+}

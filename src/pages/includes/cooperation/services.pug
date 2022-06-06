@@ -1,0 +1,9 @@
+section.services 
+  h2.reset-title.cooperation-subtitle Что вы получаете?
+  ul.reset-list.services-list 
+    each el in [{img:'network', text:'Мы ценим идеи и вдохновение и предлагаем сотрудничество талантливым дизайнерам и архитекторам. Выпускаемая нами продукция гармонично дополнит любой современный проект.'},{img:'briefcase', text:'Комплексное решение для красивого и функционального обустройства любых пространств. '},{img:'git-pull-request', text:'В ассортименте представлены все товарные группы для того, чтобы воссоздать обстановку в помещениях разных типов: кабинетах, смешанных пространствах, Open Space, гостевых и переговорных комнатах.'},]
+      li.services-item 
+        svg.services-icon(width="25" height="25" viewbox="0 0 25 25" xmlns="http://www.w3.org/2000/svg")
+          use(xlink:href="img/sprite.svg#cooperation--" + el.img)
+        p.reset-text.cooperation-text.services-text= el.text
+      

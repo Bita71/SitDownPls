@@ -1,0 +1,37 @@
+.breadcrumbs {
+  grid-area: breadcrumbs;
+  display: flex;
+  align-self: flex-end;
+  
+  @include media('md') {
+    display: none;
+  }
+  &-item {
+    font-size: 14px;
+    line-height: 14px;
+
+    &:last-child {
+      color: $primaryShade;
+    }
+    & span {
+      margin-right: 3px;
+      margin-left: 6px;
+      color: $grey;
+    }
+  }
+
+  &-link {
+    color: $grey;
+    @include transition(color, background);
+    @include textFocus($pinkViolet);
+
+    &:hover {
+      color: $primary;
+    }
+
+    &:active,
+    &:focus {
+      color: $primaryShade;
+    }
+  }
+}

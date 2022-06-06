@@ -1,0 +1,36 @@
+doctype html
+html(lang="ru")
+  head 
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Каталог
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@900&display=swap" rel="stylesheet")
+    link(rel="stylesheet" href="local_modules/choices/choices.min.css")
+    link(rel="stylesheet" href="local_modules/rangeSlider/nouislider.min.css")
+    link(rel="stylesheet" href="css/catalog.min.css")
+    script(defer src="local_modules/rangeSlider/nouislider.min.js")
+    script(defer src="local_modules/choices/choices.min.js")
+    script(defer src="local_modules/jquery/dist/jquery.min.js" )
+    script(type="module" src="js/catalog.min.js")
+  body
+    block header
+      include common/header
+    main.catalog
+      .container.catalog-container
+        block sidebar
+          include includes/catalog/sidebar
+        block oxford
+          include includes/catalog/oxford
+        block products-top
+          include includes/catalog/top 
+        block products
+          include includes/catalog/products 
+    block footer
+      include common/footer
+
+
+    
+  

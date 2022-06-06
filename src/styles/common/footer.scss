@@ -1,0 +1,190 @@
+.footer {
+  &-top {
+    background-color: $mdGrey;
+  }
+
+  &-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 32px;
+    padding-top: 22px;
+    padding-bottom: 24px;
+
+    @include media("xl") {
+      grid-template-columns: repeat(9, 1fr);
+    }
+    @include media("lg") {
+      display: flex;
+      flex-direction: column;
+      padding-top: 25px;
+      gap: 26px;
+    }
+
+    @include media("md") {
+      padding-top: 24px;
+      gap: 27px;
+    }
+  }
+
+  &-left {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+
+    @include media("lg") {
+      flex-direction: row;
+    }
+
+    @include media("md") {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &-right {
+    grid-column: 3/7;
+    display: flex;
+    padding-top: 5px;
+
+    @include media("xl") {
+      grid-column: span 7;
+    }
+
+    @include media("lg") {
+      padding-top: 0;
+    }
+    @include media("md") {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 27px 17px;
+    }
+    &-item {
+      margin-right: auto;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &-title {
+      margin-bottom: 7px;
+      &-link {
+        display: block;
+        width: max-content;
+        font-weight: 400;
+        font-size: 16px;
+        color: $black;
+        line-height: 16px;
+        @include textFocus($pinkViolet);
+        @include transition(color, background-color);
+
+        &:hover {
+          color: $primary;
+        }
+        &:active {
+          color: $primaryShade;
+        }
+      }
+    }
+
+    &-extra {
+      &-item {
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+      }
+
+      &-link {
+        display: block;
+        width: max-content;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 14px;
+        color: $grey;
+        @include textFocus($pinkViolet);
+        @include transition(color, background-color);
+
+        &:hover {
+          color: $primary;
+        }
+
+        &:focus,
+        &:active {
+          color: $primaryShade;
+        }
+      }
+    }
+  }
+
+  &-logo {
+    max-width: 187px;
+
+    @include media("lg") {
+      height: 100%;
+    }
+
+    @include media("md") {
+      margin-bottom: 24px;
+    }
+  }
+
+  &-networks {
+    display: flex;
+    margin-top: auto;
+    margin-bottom: 0;
+    @include media("lg") {
+      margin: auto 0 auto auto;
+    }
+
+    @include media("md") {
+      margin: 0;
+    }
+
+    &-item {
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+
+    &-link {
+      display: block;
+      width: 30px;
+      height: 30px;
+      @include textFocus($primaryLight);
+      @include transition(background-color);
+
+      & svg path {
+        @include transition(fill); 
+      }
+
+      &:hover {
+        svg path {
+          fill: $primary;
+        }
+      }
+
+      &:focus {
+        svg path {
+          fill: $white;
+        }
+      }
+
+      &:active { 
+        svg path {
+          fill: $primaryShade;
+        }
+      }
+    }
+  }
+
+  &-bottom {
+    text-align: center;
+    padding: 7px 0;
+    font-size: 14px;
+    color: $grey;
+    background-color: $greyLight;
+  }
+}
+
+.is-close {
+  display: none;
+}

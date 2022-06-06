@@ -1,0 +1,27 @@
+section.sidebar 
+  form.sidebar-form(action="#") 
+    h2.reset-title.sidebar-title Фильтровать по
+    .sidebar-form-item.sidebar-category 
+      h3.reset-title.sidebar-subtitle Категория
+      .sidebar-dropdown
+        ul.reset-list.sidebar-list#categoryList
+    .sidebar-form-item.sidebar-price
+      h3.reset-title.sidebar-subtitle.sidebar-price-title Цена
+      .sidebar-dropdown.sidebar-price-numbers
+        label.reset-label.sidebar-price-label.sidebar-price-from(for="priceFrom")
+          span от
+          input.sidebar-price-input.sidebar-price-from#priceFrom(type="number" name="priceFrom" value="0") 
+        label.reset-label.sidebar-price-label.sidebar-price-to(for="priceTo")
+          span до
+          input.sidebar-price-input.sidebar-price-to#priceTo(type="number" name="priceTo" value="0") 
+      #noUiSlider
+    .sidebar-form-item.sidebar-discount 
+      h3.reset-title.sidebar-subtitle Скидка
+      .sidebar-dropdown
+        ul.reset-list.sidebar-list#discountList
+    .sidebar-form-item.sidebar-color 
+      h3.reset-title.sidebar-subtitle Цвет
+      .sidebar-dropdown
+        ul.reset-list.sidebar-list#colorList
+
+

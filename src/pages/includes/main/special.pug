@@ -1,0 +1,41 @@
+section.section-margin.special 
+  .container.special-container
+    h2.reset-title.subtitle.special-title Специальные предложения
+    - var specialImgPath = 'img/main/special/';
+    - var specialPath1024 = specialImgPath + '1024/';
+    - var specialPath768 = specialImgPath + '768/';
+    - var specialPath320 =specialImgPath + '320/';
+    - var specialImgFormat = '.png';
+    .swiper-special
+      ul.reset-list.swiper-wrapper 
+        each el in [{img:'1', title:'Кресло велюровое “X-24”', price:'15 990', oldPrice:'24 990', sale:'9 000',},{img:'2', title:'Диван тканевый “Z-44”', price:'22 990', oldPrice:'32 990', sale:'10 000', extraClass:'big', },{img:'3', title:'Будильник  “Quartz-23”', price:'1 290', oldPrice:'1 890', sale:'600', },{img:'4', title:'Мини-скульптура “Oh my deer”', price:'690', oldPrice:'990', sale:'300', },{img:'5', title:'Диван вел-флок “Z-85”', price:'22 990', oldPrice:'32 990', sale:'10 000', extraClass:'big'},{img:'6', title:'Термометр + гидрометр “H-18”', price:'1 390', oldPrice:'2 090', sale:'700', }]
+          li.swiper-slide(class=el.extraClass)
+            article.card
+              .card-top= "- " + el.sale
+              .card-img
+                picture
+                  source(srcset=specialPath320 + el.img + specialImgFormat media="(max-width: 500px)")
+                  source(srcset=specialPath768 + el.img + specialImgFormat media="(max-width: 900px)")
+                  source(srcset=specialPath1024 + el.img + specialImgFormat media="(max-width: 1200px)")
+                  source(srcset=specialImgPath + el.img + specialImgFormat)
+                  img(src=specialImgPath + el.img + specialImgFormat, alt=el.title)
+              .card-content
+                h3.reset-title.card-title
+                  a.reset-link.card-title-link(href="#")= el.title 
+                .card-price
+                  .card-price-new= el.price + " руб"
+                  s.card-price-old= el.oldPrice + " руб"
+                button.reset-btn.btn-secondary(type="button") Купить
+              if el.extraClass == 'big'
+                img.card-fig(src=specialImgPath + el.img + "-fig" + specialImgFormat, alt="figure")
+    .special-swiper-btns
+      button.reset-btn.btn-arrow.swiper-button-prev-special(type="button")
+        svg(width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg")
+          path(d="M14 11L19 16L14 21" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+          circle(cx="16" cy="16" r="15" stroke="#A65CF0" stroke-width="2")
+      button.reset-btn.btn-arrow.swiper-button-next-special(type="button")
+        svg(width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg")
+          path(d="M14 11L19 16L14 21" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+          circle(cx="16" cy="16" r="15" stroke="#A65CF0" stroke-width="2")
+        
+      

@@ -1,0 +1,51 @@
+doctype html
+html(lang="ru")
+  head 
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title SitDownPls
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@900&display=swap" rel="stylesheet")
+    link(rel="stylesheet" href="local_modules/choices/choices.min.css")
+    link(rel="stylesheet" href="local_modules/modal/graph-modal.min.css")
+    link(rel="stylesheet" href="local_modules/swiper/swiper-bundle.min.css")
+    link(rel="stylesheet" href="css/main.min.css")
+    script(defer src="local_modules/modal/graph-modal.min.js")
+    script(defer src="local_modules/choices/choices.min.js")
+    script(defer src="local_modules/just-validate/just-validate.min.js")
+    script(defer src="local_modules/swiper/swiper-bundle.min.js")
+    script(defer src="local_modules/jquery/dist/jquery.min.js" )
+    script(defer src="local_modules/mask/inputmask.min.js" )
+    script(defer src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js")
+    script(defer src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js")
+    script(type="module" src="js/main.min.js")
+  body
+    block header
+      include common/header
+    main 
+      block hero
+        include includes/main/hero
+      block special
+        include includes/main/special
+      block rating
+        include includes/main/rating 
+      block oxford
+        include includes/main/oxford    
+      block categories
+        include includes/main/categories
+      block useful
+        include includes/main/useful
+      block application-form
+        include includes/main/application
+      block modals
+        include modals/modals
+    block footer
+      include common/footer
+
+
+
+
+
+

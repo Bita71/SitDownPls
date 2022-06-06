@@ -1,0 +1,51 @@
+.similar {
+  &-container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &-title {
+    order: 0;
+    margin-bottom: 24px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+  }
+
+  & .swiper {
+    &-similar {
+      order: 2;
+      height: 420px;
+      overflow: hidden;
+
+      @include media("sm") {
+        order: 1;
+        height: 278px;
+        margin-bottom: 16px;
+      }
+
+      & .card-img {
+        @include media("lg") {
+          margin-bottom: 16px;
+        }
+
+        @include media("sm") {
+          margin-bottom: 14px;
+        }
+      }
+    }
+
+    @include swiperBtns(similar);
+  }
+  &-swiper-btns {
+    display: flex;
+    order: 1;
+    margin-left: auto;
+
+    @include media("sm") {
+      order: 2;
+      margin: 0 auto;
+    }
+  }
+}

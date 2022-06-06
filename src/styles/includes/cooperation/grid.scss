@@ -1,0 +1,60 @@
+.cooperation {
+  margin-bottom: 70px;
+  
+  &-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 32px;
+
+    @include media('xl') {
+      grid-template-columns: repeat(9, 1fr);
+    }
+    @include media('lg') {
+      grid-template-columns: 1fr;
+    }
+
+  }
+
+
+  &-title {
+    grid-column: span 4;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 34px;
+    @include media('xl') {
+      grid-column: span 9;
+      line-height: 32px;
+    }
+
+    @include media('lg') {
+      grid-column: span 1;
+    }
+
+    @include media('sm') {
+      font-size: 24px;
+      line-height: 24px;
+    }
+  }
+
+  &-subtitle {
+    margin-bottom: 12px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 33px;
+
+    @include media('sm') {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  &-text {
+    font-size: 16px;
+    line-height: 29px;
+    color: $greyShade;
+    @include media('sm') {
+      font-size: 14px;
+      line-height: 25px;
+    }
+  }
+}

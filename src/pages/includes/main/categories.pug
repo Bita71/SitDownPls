@@ -1,0 +1,18 @@
+section.section-margin.categories 
+  .container
+    h2.reset-title.subtitle Топ категории
+    ul.reset-list.categories-list 
+      each el in [{extraClass:'category-1', category:'Диваны', subcategories:['Прямые','Угловые','Модульные']}, {extraClass:'category-2', category:'Кресла', subcategories:['Мягкие','Кресла-кровати']}, {extraClass:'category-3', category:'Кровати', subcategories:['Односпальные','Двуспальные']}, {extraClass:'category-4', category:'Тумбы и комоды', subcategories:['Тумбы','Комоды']}, {extraClass:'category-5', category:'Стулья', subcategories:['Деревянные','Металлокаркас']},]
+        li.categories-item(class=el.extraClass)
+          ul.reset-list.subcategories 
+            each subcategory in el.subcategories
+              li.subcategories-item 
+                a.reset-link.subcategories-link(href="#")= subcategory
+          .categories-bottom
+            h3.reset-title.categories-title
+              a.reset-link.categories-title-link(href="#")= el.category 
+            a.reset-link.btn-to-catalog.categories-link(href="#") 
+              span В каталог 
+              svg(width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg")
+                path(d="M9.625 7.5625L13.0625 11L9.625 14.4375" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                circle(cx="11" cy="11" r="10" stroke="#A65CF0" stroke-width="2")

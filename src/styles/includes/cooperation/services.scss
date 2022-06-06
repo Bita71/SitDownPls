@@ -1,0 +1,33 @@
+.services {
+  grid-column: span 3;
+
+  @include media('xl') {
+    grid-column: span 6;
+  
+  }
+  @include media('lg') {
+    grid-column: span 1;
+  }
+
+
+  &-item {
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &-icon {
+    min-width: 25px;
+    height: 25px;
+    margin-right: 12px;
+  }
+
+  &-text {
+    line-height: 24px;
+    @include media('sm') {
+      line-height: 21px;
+    }
+  }
+}

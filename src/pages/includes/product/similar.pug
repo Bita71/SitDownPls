@@ -1,0 +1,27 @@
+section.section-margin.similar
+  .container.similar-container
+    h2.reset-title.similar-title Похожие товары
+    .swiper-similar
+      ul.reset-list.swiper-wrapper 
+        each el in [{img:'1', title:'Диван велюровый “R-85””', price:'34 990', rate: '4,5',}, {img:'2', title:'Диван флоковый “H-58”', price:'23 990', rate: '4,6' ,}, {img:'3', title:'Диван велюровый “S-44”', price:'19 990', rate: '4,5',}, {img:'4', title:'Диван шиниловый “V-43”', price:'19 990', rate: '4,8',},{img:'1', title:'Диван велюровый “R-85””', price:'34 990', rate: '4,5',}, {img:'2', title:'Диван флоковый “H-58”', price:'23 990', rate: '4,6' ,}, {img:'3', title:'Диван велюровый “S-44”', price:'19 990', rate: '4,5',}, {img:'4', title:'Диван шиниловый “V-43”', price:'19 990', rate: '4,8',},]
+          li.swiper-slide.card-full.similar-item
+            article.card
+              .card-top= el.rate
+              .card-img
+                img(src='img/product/similar/' + el.img + '.png', alt=el.title)
+              .card-content
+                h3.reset-title.card-title
+                  a.reset-link.card-title-link(href="#")= el.title 
+                .card-price= el.price + " руб"
+                button.reset-btn.btn-secondary.card-content-btn(type="button") Купить
+    .similar-swiper-btns
+      button.reset-btn.btn-arrow.swiper-button-prev-similar(type="button")
+        svg(width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg")
+          path(d="M14 11L19 16L14 21" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+          circle(cx="16" cy="16" r="15" stroke="#A65CF0" stroke-width="2")
+      button.reset-btn.btn-arrow.swiper-button-next-similar(type="button")
+        svg(width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg")
+          path(d="M14 11L19 16L14 21" stroke="#A65CF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+          circle(cx="16" cy="16" r="15" stroke="#A65CF0" stroke-width="2")
+        
+      

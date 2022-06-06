@@ -1,0 +1,58 @@
+.buyOneClick {
+  &-container {
+    width: 624px;
+    padding: 30px;
+
+    @include media("md") {
+      width: calc(100% - 24px);
+      padding: 30px 16px;
+    }
+  }
+
+  &-title {
+    margin-bottom: 8px;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 32px;
+
+    @include media("md") {
+      font-size: 24px;
+      line-height: 24px;
+    }
+  }
+
+  &-text {
+    max-width: 375px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    line-height: 19px;
+    @include media("md") {
+      margin-bottom: 16px;
+    }
+  }
+
+  &-label {
+    display: block;
+    margin-bottom: 30px;
+    @include media("md") {
+      margin-bottom: 16px;
+    }
+  }
+
+  &-input {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  &-btn {
+    margin-bottom: 12px;
+  }
+
+  &-approval {
+    & span {
+      @include media("md") {
+        white-space: nowrap;
+      }
+    }
+  }
+}

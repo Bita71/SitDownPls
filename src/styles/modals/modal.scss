@@ -1,0 +1,56 @@
+.modal {
+  background-color: rgba(51, 51, 51, 0.3);
+
+  &-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    @include transition(background-color);
+    @include textFocus($pinkViolet);
+
+    @include media("sm") {
+      width: 12px;
+      height: 12px;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 11px;
+      right: -1px;
+      border-radius: 10px;
+      width: 26px;
+      height: 1.5px;
+      background-color: $grey;
+      transform: rotate(45deg);
+      @include transition(background-color);
+      @include media("sm") {
+        top: 5px;
+        right: -2px;
+        border-radius: 10px;
+        width: 15px;
+        height: 1.5px;
+      }
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+
+    &:hover::after,
+    &:hover::before {
+      background-color: $primary;
+    }
+
+    &:active::after,
+    &:active::before,
+    &:focus::after,
+    &:focus::before {
+      background-color: $primaryShade;
+    }
+  }
+}

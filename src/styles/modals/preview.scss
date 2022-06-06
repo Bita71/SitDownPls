@@ -1,0 +1,105 @@
+.modal-preview {
+  &-container {
+    width: 1280px;
+    padding: 0;
+
+    @include media("xl") {
+      width: calc(100% - 72px);
+    }
+  }
+
+  &-photo {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px 108px;
+
+    @include media("xl") {
+      padding: 50px 66px;
+    }
+
+    @include media("md") {
+      padding: 32px 16px;
+    }
+  }
+
+  &-list {
+    overflow-x: auto;
+    overflow-y: none;
+    -ms-overflow-style: none; /* IE 11 */
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      -webkit-appearance: none;
+      width: 0;
+      height: 0;
+    }
+  }
+
+  &-item {
+    width: auto;
+    text-align: center;
+
+    &.close {
+      display: none;
+    }
+  }
+
+  &-img {
+    height: 126px;
+    object-fit: contain;
+    cursor: pointer;
+    @include transition(opacity);
+
+    @include media('md') {
+      height: 86px;
+    }
+
+    &:active,
+    &:focus {
+      opacity: 0.8;
+    }
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
+
+.swiper-preview {
+  position: relative;
+  border-radius: 0 0 10px 10px;
+  padding: 20px 51px;
+  background-color: $greyLight;
+  overflow: hidden;
+
+  @include media("xl") {
+    padding: 20px 67px;
+  }
+  @include media("xl") {
+    padding: 16px 62px;
+  }
+}
+
+.swiper-button-prev-preview,
+.swiper-button-next-preview {
+  position: absolute;
+  display: none;
+  top: calc(50% - 16px);
+  left: 10px;
+  z-index: 2;
+
+  @include media("xl") {
+    display: block;
+  }
+}
+
+.swiper-button-prev-preview {
+  & svg {
+    transform: rotate(180deg);
+  }
+}
+
+.swiper-button-next-preview {
+  right: 10px;
+  left: auto;
+}

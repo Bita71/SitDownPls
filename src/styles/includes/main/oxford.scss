@@ -1,0 +1,88 @@
+.oxford {
+  $pathImgOxford: "../img/main/oxford/";
+  $nameImgOxford: "1";
+  $formatImgOxford: ".jpg";
+  background-image: url($pathImgOxford + $nameImgOxford + $formatImgOxford);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  @include media("xl") {
+    background-image: url($pathImgOxford + "1024/" + $nameImgOxford + $formatImgOxford);
+  }
+
+  @include media("lg") {
+    background-image: url($pathImgOxford + "768/" + $nameImgOxford + $formatImgOxford);
+  }
+  @include media("md") {
+    background: $white;
+  }
+
+
+  &-container {
+    padding-top: 154px;
+    padding-bottom: 150px;
+
+    @include media('lg'){
+      padding-left: 36px;
+      padding-right: 36px;
+    }
+
+    @include media("md") {
+      padding: 0;
+      background: $white;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  &-content {
+    max-width: 508px;
+    margin-bottom: 47px;
+    @include media("md") {
+      max-width: 100%;
+      margin-bottom: 32px;
+      padding: 32px 121px 111px 12px;
+      background-image: url($pathImgOxford + "320/" + $nameImgOxford + $formatImgOxford);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  &-title {
+    margin-bottom: 1px;
+    font-family: $extraFont;
+    font-size: 60px;
+    font-weight: 900;
+    line-height: 72px;
+    color: $gold;
+
+    @include media("md") {
+      margin-bottom: 0;
+      font-size: 24px;
+      line-height: 29px;
+    }
+  }
+
+  &-text {
+    font-size: 48px;
+    line-height: 58px;
+    color: $white;
+    @include media("md") {
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+
+  &-btn {
+    padding-left: 30px;
+    padding-right: 30px;
+
+    @include media("md") {
+      display: block;
+      margin: 0 auto;
+      width: calc(100% - 24px);
+    }
+  }
+}

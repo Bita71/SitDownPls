@@ -1,0 +1,26 @@
+.catalog {
+  margin-bottom: 70px;
+  &-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto 360px auto;
+
+    grid-template-areas:
+      "sidebar products-top products-top products-top"
+      "sidebar products products products"
+      "oxford products products products"
+      ". products products products";
+    gap: 32px;
+
+    @include media("xl") {
+      grid-template-columns: 1fr;
+
+      grid-template-rows: repeat(3, auto);
+      grid-template-areas:
+        "products-top"
+        "sidebar"
+        "products";
+    }
+
+  }
+}

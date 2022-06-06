@@ -1,0 +1,1 @@
+createCatalogPages(productsList, productsContainerId);

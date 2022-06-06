@@ -1,0 +1,15 @@
+.modal__container.buyOneClick-container(role="dialog" aria-modal="true" data-graph-target="buyOneClick")
+  button.reset-btn.modal__close.modal-close(aria-label="Закрыть модальное окно")
+  form.modal-content.buyOneClick-content
+    h2.reset-title.buyOneClick-title Купить в один клик
+    p.reset-text.buyOneClick-text Чтобы оформить заказ — заполните формы ниже и наш менеджер свяжется с вами в течении часа.
+    label.form-label.buyOneClick-label(for="name") 
+      input.reset-input.form-input.buyOneClick-input#name(type="text" name="name" data-validate-field="name" placeholder="Как вас зовут?")
+    label.form-label.buyOneClick-label(for="tel") 
+      input.reset-input.form-input.buyOneClick-input#tel(type="tel" name="tel" data-validate-field="tel" placeholder="Ваш телефон")
+    button.reset-btn.btn-primary.form-btn.buyOneClick-btn(type="submit") Отправить
+    .form-aproval
+      label.reset-label.form-aproval-label.buyOneClick-approval(for="approval") 
+        input.form-aproval-input#approval(type="checkbox" name="approval" data-validate-field="approval")
+        span Принимаю 
+          a.form-aproval-link(href="#") пользовательское соглашение
